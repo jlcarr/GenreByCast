@@ -1,4 +1,4 @@
-# Genre from Cast
+# Genre by Cast
 
 A Python script using scikit-learn and IMDB's datasets to predict the genre of a movie from its leading cast using a decision tree model
 
@@ -60,7 +60,8 @@ Included in the project is a premade model. It can be loaded into Python using p
 After loading it can be used to make predictions
 ```python
 >>> import onehotify
->>> actors_set = [name_to_actor["Seth Rogen"],name_to_actor["Anna Kendrick"]]
+>>> actors_set = ["Seth Rogen","Anna Kendrick"]
+>>> actors_set = [name_to_actor[actor] for actor in actors_set]
 >>> predictions = model.predict([onehotify.set_to_onehot(actors_set,actors_encoder)])
 >>> [onehotify.onehot_to_set(prediction,genres_decoder) for prediction in predictions]
 [set(['Comedy'])]
